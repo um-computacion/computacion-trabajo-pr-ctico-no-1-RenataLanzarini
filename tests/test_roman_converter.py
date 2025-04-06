@@ -24,6 +24,11 @@ class TestRomanConverter(unittest.TestCase):
         self.assertEqual(decimal_to_roman(499),"CDXCIX")
         self.assertEqual(decimal_to_roman(999),"CMXCIX")
         self.assertEqual(decimal_to_roman(3999),"MMMCMXCIX")
+    def test_wrong_number(self):
+        self.assertEqual(decimal_to_roman(5000),"Error, el numero debe ser entre 1 y 3999")
+        self.assertEqual(decimal_to_roman(4000),"Error, el numero debe ser entre 1 y 3999")
+        self.assertEqual(decimal_to_roman(0),"Error, el numero debe ser entre 1 y 3999")
+        self.assertEqual(decimal_to_roman(-10),"Error, el numero debe ser entre 1 y 3999")
 
 if __name__ == '__main__':
     unittest.main()
